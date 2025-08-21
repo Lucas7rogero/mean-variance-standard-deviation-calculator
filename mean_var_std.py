@@ -1,19 +1,19 @@
 import numpy as np
 
 def calculate(numbers):
-    # Verifica se a lista tem 9 elementos
+    # confere se tem 9 numeros exatos na lista
     if len(numbers) != 9:
         raise ValueError("List must contain nine numbers.")
 
-    # Converte em matriz 3x3
+    # transformando a lista em uma matriz 3x3
     matrix = np.array(numbers).reshape(3, 3)
 
-    # Cria o dicionário com os cálculos
+    # calculando as estatisticas que foram pedidas
     calculations = {
         'mean': [
-            matrix.mean(axis=0).tolist(),  # média/coluna
-            matrix.mean(axis=1).tolist(),  # média/linha
-            matrix.mean().tolist()         # média total
+            matrix.mean(axis=0).tolist(), # media por coluna
+            matrix.mean(axis=1).tolist(), # média por linha
+            matrix.mean().tolist() # media total
         ],
         'variance': [
             matrix.var(axis=0).tolist(),
